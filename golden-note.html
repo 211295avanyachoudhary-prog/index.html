@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Golden Birthday Note ✨</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* 🖤 PAGE */
+body{
+    min-height:100vh;
+    background:black;
+    overflow-x:hidden;
+    overflow-y:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* 💛 GOLDEN CARD BOX */
+.card{
+    background:linear-gradient(145deg,#ffd700,#d4af37,#b8860b);
+    padding:45px;
+    width:460px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:
+        0 0 30px gold,
+        0 0 60px rgba(255,215,0,0.6);
+    z-index:2;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 30px gold}
+    to{box-shadow:0 0 70px gold}
+}
+
+.card h1{
+    color:black;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#1a1a1a;
+    font-size:1.05rem;
+    line-height:1.7;
+}
+
+/* 💛 GOLDEN HEARTS */
+.heart{
+    position:absolute;
+    bottom:-30px;
+    color:gold;
+    font-size:20px;
+    animation: rise 6s linear forwards;
+    opacity:0.9;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* 💛 GOLDEN SCROLLBAR */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:black;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg,#ffd700,#d4af37,#b8860b);
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+<audio id="bgMusic" loop>
+    <source src="c:\Users\HP\Downloads\Blue (Yung Kai)-(SambalpuriStar.In).mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💛 GOLDEN GREETING CARD -->
+<div class="card">
+    <h1>HAPPY BIRTHDAY TO YOU✨</h1>
+    <p>
+        Tap this to listen while reading..>>> PLAY SONG
+        My Diyaaaaaa, you are truly, genuinely beautiful—and not just on the outside 💫. You have a mind-blowing personality 🧠✨, a beautiful brain, and the kind of intelligence that shines quietly 🌟.<br> Your eyes sparkle ✨👀, your heart is soft 💗, and you are the sweetest soul I know 🍯(yrrr tu shehed to h par me tereko kha nhi skkti....heheheh). You are always the best advisor 🤍(thanku mujhe uss gadhe se bachane ke liyeee) always calm in every situation 🌿, and you handle whatever life throws at you with so much grace 🌈.
+
+You stay positive ☀️, cut off negativity without fear ✂️🖤(its hard...par tu bohot strong h), and walk with your personality like it’s your crown 👑. The way you carry yourself is something I deeply admire 💐. You are so beautiful that sometimes words fail me 🥹✨.<br>
+
+You have always stood by me 🤝 and never left my side 🫂. People once said I was just a “bandage” in your life 🩹—that I’d last only a year and then be thrown away 💔. But even now, you’re still here 🌸. And I’m so grateful 🙏💞.<br> Those people were wrong, toxic, and cruel 🚫☣️. You’re the one who taught me how harsh the world can be 🌍—and also how strong we must become to survive it 💪🔥. You showed me that we don’t break; we fight ⚔️, grow 🌱, and gain power ⚡.
+
+I love you deeply ❤️—so deeply that I would never go against you, no matter what........ ♾️.<br>
+
+And today, on your **17th birthday** 🎂🎉, I wish you the biggest, happiest birthday ever ✨🥳.<br>
+May you succeed in everything you dream of 🌠—you truly deserve it all 💎. Stay focused 🎯, stay calm 🕊️, and stay disciplined 📘, because that discipline is what will carry you to the very end 🛤️✨.
+
+I loveeeeee youuuuuuu sooooooooooooooooooooooooooooooo mucccccccccccch 💕.
+You are incredibly strong 💪, incredibly rare 💎, and unbelievably pretty 🤍✨.
+(hameha khush rehna.......and tu to pta par me tere se milne zarrrorrr aayugi)
+
+    </p>
+</div>
+
+<script>
+let musicPlayed = false;
+document.addEventListener("click", ()=>{
+    if(!musicPlayed){
+        document.getElementById("bgMusic").play();
+        musicPlayed = true;
+    }
+});
+
+/* 💛 CONTINUOUS HEART GENERATOR */
+setInterval(()=>{
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💛";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random()*12) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),6000);
+}, 200);
+</script>
+
+</body>
+</html>
